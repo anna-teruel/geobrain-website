@@ -1,0 +1,6 @@
+sphinx
+pydata-sphinx-theme
+myst-parser
+sphinx-autodoc-typehints
+sphinx-copybutton
+git+https://github.com/anna-teruel/geobrain.git@rebranding
