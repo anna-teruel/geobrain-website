@@ -22,6 +22,8 @@ autodoc_member_order = "bysource"
 
 nb_execution_mode = "off"
 
+myst_heading_anchors = 3
+
 templates_path = ["_templates"]
 
 html_theme = "pydata_sphinx_theme"
@@ -32,3 +34,8 @@ html_theme_options = {
 
 html_logo = "_static/GeoBrain_logo1.png"
 html_static_path = ["_static"]
+html_css_files = ["custom.css"]
+
+html_sidebars = {
+    "user_guides": ["sidebar-nav-bs.html", "page-toc.html"],
+}

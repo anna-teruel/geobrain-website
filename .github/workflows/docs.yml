@@ -31,12 +31,12 @@ jobs:
         run: |
           mkdir -p docs/source/examples
           curl -sL -o docs/source/examples/demo_API.ipynb \
-            https://raw.githubusercontent.com/anna-teruel/geobrain/rebranding/examples/demo_API.ipynb
+            https://raw.githubusercontent.com/anna-teruel/geobrain/main/examples/demo_API.ipynb
 
       - name: Fetch user guide docs from geobrain repo
         run: |
           mkdir -p docs/source/_fetched
-          raw_base=https://raw.githubusercontent.com/anna-teruel/geobrain/rebranding
+          raw_base=https://raw.githubusercontent.com/anna-teruel/geobrain/main
           blob_base=https://github.com/anna-teruel/geobrain/blob/rebranding
           curl -sL -o docs/source/_fetched/dashboard_usage.md "$raw_base/docs/dashboard_usage.md"
           curl -sL -o docs/source/_fetched/filtering_and_coloring.md "$raw_base/docs/filtering_and_coloring.md"

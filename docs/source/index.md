@@ -1,6 +1,6 @@
 
 
-# GeoBrain
+# ![GeoBrain](_static/GeoBrain_logo1.png)
 
 **GeoBrain** is an interactive Python framework for visualizing atlas-based quantitative histological data on the Allen Mouse Brain Common Coordinate Framework (CCFv3).
 

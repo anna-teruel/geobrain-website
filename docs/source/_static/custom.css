@@ -1,0 +1,33 @@
+.bd-content h1 img {
+  background-color: transparent !important;
+  border-radius: 0 !important;
+}
+
+.geobrain-people {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 1.5rem 0;
+}
+
+.geobrain-person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 120px;
+  text-decoration: none;
+}
+
+.geobrain-person img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50% !important;
+  object-fit: cover;
+  background-color: transparent !important;
+}
+
+.geobrain-person span {
+  text-align: center;
+  font-weight: 600;
+}
