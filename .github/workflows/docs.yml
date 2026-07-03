@@ -22,7 +22,7 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
 
       - name: Install dependencies
         run: pip install -r docs/requirements.txt
@@ -37,7 +37,7 @@ jobs:
         run: |
           mkdir -p docs/source/_fetched
           raw_base=https://raw.githubusercontent.com/anna-teruel/geobrain/main
-          blob_base=https://github.com/anna-teruel/geobrain/blob/rebranding
+          blob_base=https://github.com/anna-teruel/geobrain/blob/main
           curl -sL -o docs/source/_fetched/dashboard_usage.md "$raw_base/docs/dashboard_usage.md"
           curl -sL -o docs/source/_fetched/filtering_and_coloring.md "$raw_base/docs/filtering_and_coloring.md"
           curl -sL -o docs/source/_fetched/score_definitions.md "$raw_base/docs/score_definitions.md"
