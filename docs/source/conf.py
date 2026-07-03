@@ -8,7 +8,7 @@ author = "Anna Teruel-Sanchis and Konrad Danielewski"
 copyright = "2026, Anna Teruel-Sanchis, Konrad Danielewski"
 
 extensions = [
-    "myst_parser",
+    "myst_nb",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
     "sphinx.ext.napoleon",
@@ -19,6 +19,8 @@ extensions = [
 
 autosummary_generate = True
 autodoc_member_order = "bysource"
+
+nb_execution_mode = "off"
 
 templates_path = ["_templates"]
 
