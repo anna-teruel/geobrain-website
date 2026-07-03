@@ -20,10 +20,12 @@ extensions = [
 autosummary_generate = True
 autodoc_member_order = "bysource"
 
+templates_path = ["_templates"]
+
 html_theme = "pydata_sphinx_theme"
 
 html_theme_options = {
-    "github_url": "https://github.com/anna-teruel/BRAD/tree/rebranding",
+    "github_url": "https://github.com/anna-teruel/geobrain",
 }
 
 html_logo = "_static/GeoBrain_logo1.png"
