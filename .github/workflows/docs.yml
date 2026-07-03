@@ -33,6 +33,31 @@ jobs:
           curl -sL -o docs/source/examples/demo_API.ipynb \
             https://raw.githubusercontent.com/anna-teruel/geobrain/rebranding/examples/demo_API.ipynb
 
+      - name: Fetch user guide docs from geobrain repo
+        run: |
+          mkdir -p docs/source/_fetched
+          raw_base=https://raw.githubusercontent.com/anna-teruel/geobrain/rebranding
+          blob_base=https://github.com/anna-teruel/geobrain/blob/rebranding
+          curl -sL -o docs/source/_fetched/dashboard_usage.md "$raw_base/docs/dashboard_usage.md"
+          curl -sL -o docs/source/_fetched/filtering_and_coloring.md "$raw_base/docs/filtering_and_coloring.md"
+          curl -sL -o docs/source/_fetched/score_definitions.md "$raw_base/docs/score_definitions.md"
+
+          # These docs cross-link each other and link to source files in the
+          # geobrain repo by relative path. Once merged into one page here,
+          # doc-to-doc links become in-page anchors and source-file links
+          # point at GitHub's rendered file view.
+          sed -i \
+            -e 's|](filtering_and_coloring.md)|](#filtering-coloring-rendered-slices)|g' \
+            -e 's|](score_definitions.md)|](#understanding-scores)|g' \
+            -e "s|](../README.md)|]($blob_base/README.md)|g" \
+            -e "s|](../geobrain/app/assets/render.js)|]($blob_base/geobrain/app/assets/render.js)|g" \
+            -e "s|](../geobrain/app/layout.py)|]($blob_base/geobrain/app/layout.py)|g" \
+            -e "s|](../geobrain/app/callbacks.py)|]($blob_base/geobrain/app/callbacks.py)|g" \
+            -e "s|](../geobrain/app/figure.py)|]($blob_base/geobrain/app/figure.py)|g" \
+            docs/source/_fetched/dashboard_usage.md \
+            docs/source/_fetched/filtering_and_coloring.md \
+            docs/source/_fetched/score_definitions.md
+
       - name: Build Sphinx docs
         run: sphinx-build -b html docs/source docs/_build/html
 
